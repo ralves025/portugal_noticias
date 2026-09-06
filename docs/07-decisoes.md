@@ -46,4 +46,4 @@ Maior frequência; seleção de fontes favoritas; fontes regionais; exportar/imp
 
 ## Estado desta entrega
 
-P0 em execução: scripts e testes de diagnóstico criados; primeira amostra local realizada em 06/09/2026. Integração e observação no Actions em validação. Ver [relatório P0](p0/README.md). Aplicação, banco e deploy do webapp não implementados. Aprovação pública das fontes e comparação das manhãs continuam pendentes.
+P0 em execução: scripts e testes de diagnóstico criados; primeira amostra local realizada em 06/09/2026. Workflow integrado por PR; primeira execução manual do Actions validada e três manhãs agendadas. Ver [relatório P0](p0/README.md). Aplicação, banco e deploy do webapp não implementados. Aprovação pública das fontes e comparação das manhãs continuam pendentes.
