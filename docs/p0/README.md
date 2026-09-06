@@ -1,6 +1,6 @@
 # P0 — execução e resultados
 
-Estado: primeira amostra local concluída; configuração da nuvem em validação. A P0 completa depende das manhãs agendadas e da análise de uso público. Data: 06/09/2026.
+Estado: amostras iniciais local e na nuvem concluídas; observação matinal agendada e ainda pendente. A P0 completa depende das manhãs agendadas e da análise de uso público. Data: 06/09/2026.
 
 ## Escopo autorizado
 
@@ -54,7 +54,7 @@ Workflow: `.github/workflows/p0-fontes.yml`. Repositório público com Actions h
 - Ao terminar a janela, o job de encerramento desativa o workflow. Uma falha nessa etapa deve aparecer como falha da execução; o limite de datas continua impedindo novas consultas aos veículos.
 - O GitHub pode atrasar ou não entregar um disparo. Registrar a hora efetiva; contar como manhã observada apenas execuções schedule entre 09h e 12h locais em datas distintas. Amostras ausentes não são inventadas ou substituídas silenciosamente por execução manual.
 - Cada artifact `p0-snapshot-...` fica disponível por 7 dias e contém snapshot.json, summary.md e comparison.md. O relatório compara hashes com amostras anteriores, preservando falhas. Não salva títulos, descrições, matérias ou URLs individuais em claro.
-- O resumo da execução mostra a comparação. Ao final, baixar o artifact mais recente e consolidar o resultado em documento via develop → PR → main. Não marcar a P0 aprovada apenas porque o workflow terminou sem erro.
+- O resumo da execução mostra a comparação. O artifact mais recente inclui uma avaliação técnica por feed nas manhãs observadas. Ao final, usar essa avaliação e a cronologia para atualizar o documento via develop → PR → main; essa consolidação editorial ainda depende das amostras futuras. Não marcar a P0 aprovada apenas porque o workflow terminou sem erro.
 
 Referências: [agendamento do Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule), [custos](https://docs.github.com/en/billing/concepts/product-billing/github-actions). Retenção curta limita armazenamento; não foi contratado plano nem alterado orçamento da conta.
 
@@ -64,6 +64,16 @@ Referências: [agendamento do Actions](https://docs.github.com/en/actions/refere
 
 `python scripts/p0/probe.py` executa uma amostra real e grava em p0-results/ (ignorado pelo Git). Windows precisa de Python 3.11; cloud.py usa a base de fusos do runner Ubuntu. Arquivos temporários locais e credenciais não são versionados.
 
-Validação realizada: nove testes passaram localmente, cobrindo RSS/Atom, campos ausentes, datas futuras, XML malformado/perigoso, deduplicação, destinos bloqueados, erros HTTP e comparação temporal. Ainda verificar testes e primeira coleta no Actions.
+Validação realizada: nove testes passaram localmente, cobrindo RSS/Atom, campos ausentes, datas futuras, XML malformado/perigoso, deduplicação, destinos bloqueados, erros HTTP e comparação temporal. Os mesmos nove testes passaram no Actions; a primeira coleta manual, o upload e o download do artifact também foram verificados.
 
 Limites do probe: UTF-8 apenas; destinos restritos ao catálogo com validação DNS e redirecionamentos, mas sem conexão com IP fixado após DNS. É uma ferramenta de diagnóstico para catálogo controlado, não um endpoint público nem o coletor de produção. Condicionais ETag/304 são registradas mas ainda não exercitadas; a observação baixa a lista completa para permitir comparação independente entre execuções.
+
+
+## Primeira execução na nuvem verificada
+
+- [PR de integração #1](https://github.com/ralves025/portugal_noticias/pull/1): integrado após testes locais e do Actions aprovados.
+- [Execução manual #34008978462](https://github.com/ralves025/portugal_noticias/actions/runs/34008978462): concluída com sucesso; coleta em 06/09/2026 às 03:26 UTC, fora da janela matinal.
+- Resultado: mesmos cinco feeds com HTTP 200 e quantidades 50/50/50/325/51; Público com HTTP 403 também no runner Ubuntu.
+- [Artifact da primeira coleta](https://github.com/ralves025/portugal_noticias/actions/runs/34008978462/artifacts/9981860181): 27.831 bytes, expiração em 13/09/2026. Download e leitura do JSON verificados.
+- Métricas resumidas preservadas em [amostra-nuvem-2026-09-06.json](amostra-nuvem-2026-09-06.json), sem textos de notícias.
+- [Workflow e próximas execuções](https://github.com/ralves025/portugal_noticias/actions/workflows/p0-fontes.yml): agendamento habilitado na main; os disparos de 9h ainda não ocorreram. O encerramento automático está implementado, mas só poderá ser confirmado ao final da janela.

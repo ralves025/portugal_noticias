@@ -78,6 +78,25 @@ def timeline(snapshots):
             else 'Observação ainda insuficiente para concluir três manhãs; não declarar P0 concluída.',
             '', 'Novos hashes indicam alterações na lista, não necessariamente notícias publicadas desde a última coleta.',
             'Falhas e feeds vazios não são apagados. O relatório técnico não concede direitos de publicação.']
+    lines += ['', '## Resultado técnico por feed nas manhãs agendadas', '',
+              '| Feed | Manhãs com leitura válida | Menor janela observada (h) | Avaliação |',
+              '| --- | --- | --- | --- |']
+    ids = sorted({r['id'] for s in ordered for r in s['results']})
+    for feed_id in ids:
+        rows = [r for s in scheduled.values() for r in s['results'] if r['id'] == feed_id]
+        valid = [r for r in rows if r['status'] == 'ok']
+        spans = [r['span_hours'] for r in valid if r.get('span_hours') is not None]
+        if len(rows) < 3:
+            verdict = 'Observação incompleta'
+        elif len(valid) < 3:
+            verdict = 'Falhas ou descoberta pendente; não aprovar integração'
+        elif spans and min(spans) < 24:
+            verdict = 'Leitura consistente; cobertura diária possivelmente parcial'
+        else:
+            verdict = 'Leitura consistente na amostra; cobertura integral não comprovada'
+        lines.append(f"| {feed_id} | {len(valid)}/{len(rows)} | {min(spans) if spans else '-'} | {verdict} |")
+    lines += ['', 'Uso público continua pendente conforme docs/p0/README.md. Nenhuma fonte foi ativada.',
+              'As amostras matinais devem ter datas consecutivas; inspecionar a cronologia antes da conclusão final.']
     return '\n'.join(lines)+'\n'
 
 

@@ -1,6 +1,6 @@
 # Plano de execução para tarefas futuras
 
-Status: P0 em execução desde 06/09/2026; primeira amostra local concluída e observação temporal em preparação. P1–P6 não iniciados. Ver [relatório P0](p0/README.md).
+Status: P0 em execução desde 06/09/2026; primeira amostra local concluída e observação temporal agendada no Actions. P1–P6 não iniciados. Ver [relatório P0](p0/README.md).
 
 ## Pacotes e dependências
 
