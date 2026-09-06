@@ -57,7 +57,7 @@ GET /api/cron/ingest exige Authorization: Bearer CRON_SECRET, por compatibilidad
 - Usar ETag/Last-Modified quando disponíveis. HTTP 304 conta como verificação bem-sucedida; não significa publicação nova.
 - Respeitar Retry-After em 429; não fazer loops de retry. Falhas serão tentadas novamente na próxima execução.
 - Falha de um item não invalida itens válidos; falha de um feed não reverte outros feeds.
-- Com duas atualizações desejadas (9h e 14h), avaliar atraso pela última janela agendada já encerrada, por fonte. O limiar anterior de 30 horas fica substituído por essa regra; duração da janela depende da tolerância e do scheduler ainda a definir. O intervalo noturno normal não deve gerar alerta. Se nunca houve sucesso, informar ausência de coleta. Sinalizar no conjunto quando alguma fonte ativa perdeu a janela esperada.
+- Para a coleta diária com horário-alvo de 9h em Europe/Lisbon, avaliar atraso por fonte após o fim da janela de início (10h locais na proposta Hobby), acrescido do orçamento máximo de duração da execução, a fixar na implementação. Antes disso, conservar o conjunto anterior com seu horário real, sem confundir ausência de coleta de hoje com falha. Se nunca houve sucesso, informar ausência de coleta. Sinalizar no conjunto quando alguma fonte ativa perdeu a janela esperada.
 - Guardar artigos por 30 dias e logs por 14 dias, com limpeza idempotente. Favoritos locais mantêm título/link e podem sobreviver à limpeza do servidor.
 
 ## Segurança e privacidade

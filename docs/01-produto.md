@@ -9,7 +9,7 @@ Facilitar um hábito de leitura de 5 a 10 minutos sobre Portugal. Prioridades co
 - Uso pessoal, principalmente em celular, também em computador.
 - Interface em português de Portugal; linguagem simples e títulos originais.
 - Leitura pública sem conta; preferências armazenadas apenas no navegador.
-- Preferência confirmada: duas atualizações diárias, por volta das 9h e 14h, se viáveis. Confirmar fuso de referência e tolerância de atraso antes de configurar. Baixo custo continua como proposta, sem orçamento confirmado.
+- Decisão confirmada para o MVP: uma atualização diária com horário-alvo de 9h de Portugal continental (Europe/Lisbon). Na Vercel Hobby, planejar início entre 9h e 9h59, sujeito à execução do serviço; não prometer conteúdo pronto às 9h em ponto. Baixo custo continua como proposta, sem orçamento confirmado.
 - O hub agrega referências; a leitura integral ocorre no site do veículo.
 
 ## Funcionalidades do MVP

@@ -47,12 +47,12 @@ Não é necessário fornecer credenciais para o protótipo com fixtures. Separar
 
 ## Hospedagem, frequência e custos
 
-A preferência do usuário é receber duas atualizações por dia, por volta das 9h e 14h. Ainda é necessário confirmar se são horários de Brasília ou de Portugal continental e qual atraso é aceitável.
+Decisão atual do MVP: uma coleta diária com horário-alvo de 9h de Portugal continental, usando Europe/Lisbon como fuso de referência. A atualização vespertina fica adiada.
 
-Correção da interpretação inicial: o plano Hobby da Vercel limita cada cron a uma execução diária, mas permite vários crons por projeto. A proposta a validar é usar dois agendamentos diários separados, compartilhando a mesma lógica de ingestão; não uma única expressão que rode duas vezes no dia. Isso não foi configurado nem testado. A documentação informa que uma execução marcada para uma hora pode ocorrer até o fim daquela hora, portanto não garante atualização pronta exatamente às 9h ou 14h. Fonte: [limites de cron da Vercel](https://vercel.com/docs/cron-jobs/usage-and-pricing), consultada em 05/09/2026.
+A Vercel Hobby admite cron diário, mas pode iniciar a execução em qualquer momento da hora marcada. Assim, o plano considera início entre 9h e 9h59 locais, mais o tempo de coleta, sem garantia de conclusão às 9h. A interface deve mostrar o horário real da última atualização. Fonte: [limites de cron da Vercel](https://vercel.com/docs/cron-jobs/usage-and-pricing), consultada em 06/09/2026.
 
-Se a tolerância exigir maior precisão, avaliar outro scheduler ou plano compatível antes de contratar. A hospedagem da aplicação e o serviço que dispara a coleta podem ser escolhidos separadamente.
+O scheduler usa UTC, não Europe/Lisbon. Para manter o horário local, a proposta inicial é um único cron com ajuste sazonal da configuração: 09:00 UTC no horário padrão e 08:00 UTC no horário de verão de Lisboa. Antes do deploy, registrar o responsável e o procedimento de atualização/redeploy nas transições, verificar a regra vigente do fuso e testar as conversões. Uma expressão UTC fixa o ano todo deslocaria a coleta local em uma hora; não considerar que a Vercel fará essa conversão automaticamente. Referência: [Cron Jobs](https://vercel.com/docs/cron-jobs).
 
-O cron da Vercel usa UTC. Converter os horários somente depois da confirmação do fuso. Se a referência for Europe/Lisbon, considerar as mudanças sazonais de horário; não fixar um offset anual. A interface continuará informando a hora real de atualização.
+Essa opção reduz a configuração inicial, mas exige manutenção sazonal. Se for necessário ajuste automático de fuso ou pontualidade maior, reavaliar o scheduler. Nenhum cron foi configurado nesta etapa.
 
 Objetivo de custo: começar dentro das franquias disponíveis, sem compromisso de custo zero. Conferir preços, quotas, pausa por inatividade, retenção e limites de execução na contratação. Custos potenciais: hospedagem, banco, domínio opcional e tráfego. Nenhuma assinatura paga está autorizada ou provisionada neste planejamento.

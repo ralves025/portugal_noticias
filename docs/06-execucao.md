@@ -51,7 +51,7 @@ Funcionalidades F01–F07 atendidas; pelo menos uma fonte operacional identifica
 2. Criar ambiente, aplicar migrações, cadastrar apenas fontes validadas e configurar segredos.
 3. Executar primeira ingestão protegida e verificar artigos e logs.
 4. Publicar preview e validar fluxos; promover ao ambiente de uso quando a tarefa de publicação estiver autorizada.
-5. Configurar as duas coletas diárias após definir fuso e tolerância; conferir execuções matinal e vespertina, considerando a janela do scheduler.
+5. Configurar uma coleta diária com horário-alvo de 9h em Europe/Lisbon; validar a janela de execução, a conversão para UTC e o procedimento de ajuste sazonal antes de publicar. Conferir uma execução automática na manhã seguinte.
 6. Documentar exportação/restauração do banco disponível no plano, retenção e procedimento para desativar uma fonte.
 7. Para rollback, restaurar a versão anterior da aplicação compatível com o schema; não presumir reversão automática de migrações nem cron.
 
