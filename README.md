@@ -24,6 +24,7 @@ Fluxo recomendado para trabalhos futuros: verificar o estado remoto, trabalhar e
 6. [Plano de execução](docs/06-execucao.md): pacotes de trabalho e critérios de aceite.
 7. [Decisões e pendências](docs/07-decisoes.md): premissas, riscos e próximos passos.
 8. [Orientações para agentes](AGENTS.md): como continuar este projeto.
+9. [Histórico de alterações](CHANGELOG.md): entregas realizadas e mudanças ainda não lançadas.
 
 ## Proposta resumida
 
