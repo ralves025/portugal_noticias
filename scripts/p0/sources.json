@@ -1,0 +1,15 @@
+{
+  "observation_start": "2026-09-06",
+  "observation_end": "2026-09-08",
+  "timezone": "Europe/Lisbon",
+  "feeds": [
+    {"id":"rtp-pais","source":"RTP","url":"https://www.rtp.pt/noticias/rss/pais","evidence":"https://www.rtp.pt/noticias/rss/feeds","hosts":["www.rtp.pt"],"theme":"País"},
+    {"id":"rtp-desporto","source":"RTP","url":"https://www.rtp.pt/noticias/rss/desporto","evidence":"https://www.rtp.pt/noticias/rss/feeds","hosts":["www.rtp.pt"],"theme":"Desporto"},
+    {"id":"rtp-cultura","source":"RTP","url":"https://www.rtp.pt/noticias/rss/cultura","evidence":"https://www.rtp.pt/noticias/rss/feeds","hosts":["www.rtp.pt"],"theme":"Cultura"},
+    {"id":"abola","source":"A Bola","url":"https://www.abola.pt/rss-articles.xml","evidence":"https://www.abola.pt/ (link rel=alternate application/rss+xml)","hosts":["www.abola.pt","abola.pt"],"theme":"Desporto; abrangência a verificar"},
+    {"id":"observador","source":"Observador","url":"https://observador.pt/feed/","evidence":"https://observador.pt/ (link rel=alternate application/rss+xml)","hosts":["observador.pt","www.observador.pt"],"theme":"Geral; classificação a verificar"}
+  ],
+  "discovery_pages": [
+    {"id":"publico","source":"Público","url":"https://www.publico.pt/","hosts":["www.publico.pt","publico.pt"],"theme":"Política e cultura; endpoint pendente"}
+  ]
+}

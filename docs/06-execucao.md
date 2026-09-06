@@ -1,6 +1,6 @@
 # Plano de execução para tarefas futuras
 
-Status de todos os pacotes: não iniciado. Esta entrega conclui somente o planejamento documental.
+Status: P0 em execução desde 06/09/2026; primeira amostra local concluída e observação temporal em preparação. P1–P6 não iniciados. Ver [relatório P0](p0/README.md).
 
 ## Pacotes e dependências
 
@@ -51,7 +51,7 @@ Funcionalidades F01–F07 atendidas; pelo menos uma fonte operacional identifica
 2. Criar ambiente, aplicar migrações, cadastrar apenas fontes validadas e configurar segredos.
 3. Executar primeira ingestão protegida e verificar artigos e logs.
 4. Publicar preview e validar fluxos; promover ao ambiente de uso quando a tarefa de publicação estiver autorizada.
-5. Configurar coleta diária e conferir uma execução automática posterior, considerando a janela do scheduler.
+5. Configurar uma coleta diária com horário-alvo de 9h em Europe/Lisbon; validar a janela de execução, a conversão para UTC e o procedimento de ajuste sazonal antes de publicar. Conferir uma execução automática na manhã seguinte.
 6. Documentar exportação/restauração do banco disponível no plano, retenção e procedimento para desativar uma fonte.
 7. Para rollback, restaurar a versão anterior da aplicação compatível com o schema; não presumir reversão automática de migrações nem cron.
 

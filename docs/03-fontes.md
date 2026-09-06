@@ -6,9 +6,9 @@ Pesquisa documental realizada em 05/09/2026. Disponibilidade de RSS não equival
 
 | Veículo | Evidência / ponto de partida | Estado |
 | --- | --- | --- |
-| RTP Notícias | [Página oficial RSS](https://www.rtp.pt/noticias/rss/feeds), que informa o endpoint https://www.rtp.pt/noticias/rss | RSS documentado; XML e condições de uso ainda precisam ser testados/revisados |
-| Público | [Site oficial](https://www.publico.pt/) | Candidato; endpoint atual e condições não confirmados |
-| Observador | [Site oficial](https://observador.pt/); tentativa de abrir https://observador.pt/feed/ retornou erro na ferramenta de pesquisa | Candidato; erro não comprova ausência de feed |
+| RTP Notícias | [Página oficial RSS](https://www.rtp.pt/noticias/rss/feeds), que informa o endpoint https://www.rtp.pt/noticias/rss | Três feeds testados localmente em 06/09; observação temporal e aprovação pública pendentes (ver relatório P0) |
+| Público | [Site oficial](https://www.publico.pt/) | Página de descoberta retornou HTTP 403 localmente em 06/09; endpoint atual e condições pendentes |
+| Observador | [Site oficial](https://observador.pt/); tentativa de abrir https://observador.pt/feed/ retornou erro na ferramenta de pesquisa | Feed confirmado no HTML oficial e testado localmente em 06/09; janela observada de 9,74h; uso público pendente |
 | Renascença | [Site oficial](https://rr.sapo.pt/) | Candidato para ampliar diversidade; integração não verificada |
 | SIC Notícias | [Site oficial](https://sicnoticias.pt/) | Candidato; integração não verificada |
 
@@ -46,3 +46,36 @@ Os links dos candidatos são pontos de investigação, não endpoints aprovados.
 - Não contornar assinatura, login ou bloqueio; não assumir acesso gratuito a todos os links.
 - Não apagar matérias de veículos distintos por tratarem do mesmo acontecimento. Deduplicar somente a mesma publicação conforme arquitetura.
 - Não apresentar diversidade de veículos como garantia automática de neutralidade ou veracidade.
+
+## Sugestões para avaliar com o usuário
+
+Prioridades informadas: atualidade nacional portuguesa, política portuguesa, desporto português e cultura. Proposta de conjunto inicial: RTP + Público + A Bola; Observador como opção adicional para comparar coberturas. Não representa escolha final do usuário nem aprovação técnica das integrações.
+
+| Veículo | Papel sugerido | Referência editorial |
+| --- | --- | --- |
+| RTP | Base generalista, com canais de País, Cultura e Desporto | [RSS oficial](https://www.rtp.pt/noticias/rss/feeds) |
+| Público | Complementar política e cultura, incluindo Ípsilon | [Ficha técnica e editorias](https://www.publico.pt/nos/ficha-tecnica) |
+| A Bola | Cobertura especializada de desporto; conferir variedade além de futebol | [Apresentação do veículo](https://www.abola.pt/sobre) |
+| Observador | Outra redação para comparar a cobertura da atualidade | [Estatuto editorial](https://observador.pt/estatuto-editorial/) |
+
+Referências consultadas em 06/09/2026. A Bola passa a ser candidata; feed, condições de agregação e acesso às matérias continuam pendentes. As sugestões dizem respeito à cobertura editorial; não asseguram RSS disponível ou leitura integral gratuita.
+
+## P0 em linguagem simples
+
+P0 é um teste de viabilidade das fontes: descobrir de quais veículos o hub consegue receber referências de notícias automaticamente, com regularidade e nas condições apropriadas. A escolha de um veículo e sua integração são decisões distintas.
+
+RSS é uma lista que o próprio site disponibiliza para programas, normalmente com título, link e data das notícias. O teste verifica se essa lista existe, funciona e atende aos temas escolhidos.
+
+Exemplo com a RTP (passos futuros, não resultados já obtidos):
+
+1. Usar a página oficial para localizar as listas de País, Cultura e Desporto.
+2. Ler uma pequena amostra e verificar se há títulos, links válidos, datas e temas aproveitáveis.
+3. Conferir as condições publicadas e quais campos poderão ser exibidos no hub.
+4. Repetir a leitura em momentos diferentes, incluindo manhã, tarde e após o intervalo noturno, para ver se chegam novas notícias e quanto histórico permanece no feed.
+5. Registrar a conclusão: utilizável, utilizável com limitações ou pendente/inviável, com evidências.
+
+O resultado será uma tabela por veículo, com temas cobertos, situação técnica, limitações de conteúdo e recomendação de inclusão. Uma fonte pode ter boa cobertura jornalística e não oferecer uma integração adequada ao MVP.
+
+Proposta de verificação temporal: amostras distribuídas por 24–48 horas, registradas quando efetivamente realizadas; esse período é uma janela de observação, não uma promessa de disponibilidade. Validar especialmente o intervalo entre duas manhãs consecutivas, pois a decisão do MVP é uma coleta diária às 9h de Portugal continental. Verificar se os feeds conservam cobertura suficiente durante esse intervalo, inclusive fins de semana. A hipótese de que a manhã oferece um panorama útil deve ser avaliada por fonte; não pressupor um horário comum de publicação. Não ativar automações de observação apenas por esta descrição do plano.
+
+O usuário não precisa programar, fornecer senhas de jornais ou escolher todos os veículos previamente. Um agente executa a investigação em tarefa própria e apresenta os resultados para decidir quais fontes entram. A primeira amostra local da P0 foi executada em 06/09/2026. Consulte [resultados e observação na nuvem](p0/README.md); a etapa temporal e a aprovação de uso público continuam pendentes.

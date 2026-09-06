@@ -47,8 +47,12 @@ Não é necessário fornecer credenciais para o protótipo com fixtures. Separar
 
 ## Hospedagem, frequência e custos
 
-A referência inicial é Vercel com coleta diária e Supabase para dados. O plano Hobby da Vercel permite cron uma vez ao dia e execução dentro da hora configurada, sem precisão de minuto. Por isso não planejar atualização a cada 15 minutos nessa modalidade. Fonte: [limites de cron da Vercel](https://vercel.com/docs/cron-jobs/usage-and-pricing), consultada em 05/09/2026.
+Decisão atual do MVP: uma coleta diária com horário-alvo de 9h de Portugal continental, usando Europe/Lisbon como fuso de referência. A atualização vespertina fica adiada.
 
-O cron usa UTC. Escolher uma hora UTC fixa e mostrar a hora real da coleta; o horário em Lisboa varia com horário de verão. Atualização horária exigirá rever plano ou scheduler antes da implementação dessa melhoria.
+A Vercel Hobby admite cron diário, mas pode iniciar a execução em qualquer momento da hora marcada. Assim, o plano considera início entre 9h e 9h59 locais, mais o tempo de coleta, sem garantia de conclusão às 9h. A interface deve mostrar o horário real da última atualização. Fonte: [limites de cron da Vercel](https://vercel.com/docs/cron-jobs/usage-and-pricing), consultada em 06/09/2026.
+
+O scheduler usa UTC, não Europe/Lisbon. Para manter o horário local, a proposta inicial é um único cron com ajuste sazonal da configuração: 09:00 UTC no horário padrão e 08:00 UTC no horário de verão de Lisboa. Antes do deploy, registrar o responsável e o procedimento de atualização/redeploy nas transições, verificar a regra vigente do fuso e testar as conversões. Uma expressão UTC fixa o ano todo deslocaria a coleta local em uma hora; não considerar que a Vercel fará essa conversão automaticamente. Referência: [Cron Jobs](https://vercel.com/docs/cron-jobs).
+
+Essa opção reduz a configuração inicial, mas exige manutenção sazonal. Se for necessário ajuste automático de fuso ou pontualidade maior, reavaliar o scheduler. Nenhum cron foi configurado nesta etapa.
 
 Objetivo de custo: começar dentro das franquias disponíveis, sem compromisso de custo zero. Conferir preços, quotas, pausa por inatividade, retenção e limites de execução na contratação. Custos potenciais: hospedagem, banco, domínio opcional e tráfego. Nenhuma assinatura paga está autorizada ou provisionada neste planejamento.

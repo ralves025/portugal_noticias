@@ -15,6 +15,21 @@ Histórico das alterações relevantes do Notícias PT, em ordem da mais recente
 
 ### Adicionado
 
+- P0: probe de feeds oficiais, nove testes automatizados, relatório técnico local e workflow de observação limitada a 6–8/09/2026 no GitHub Actions, com artifacts por sete dias e encerramento automático.
+- Descoberta oficial de RSS de A Bola e Observador; registro de HTTP 403 do Público e das pendências de uso público. A observação temporal permanece em andamento.
+
+### Alterado
+
+- Em 2026-09-06, frequência do MVP simplificada para uma coleta diária, com horário-alvo de 9h em Europe/Lisbon; substitui a preferência anterior por duas coletas. Documentadas janela de execução e necessidade de ajuste sazonal do cron UTC.
+
+- Preferências registradas: atualidade nacional portuguesa, política, desporto e cultura; duas atualizações desejadas, às 9h e 14h, com fuso e tolerância pendentes.
+- Corrigida a interpretação dos limites de agendamento da Vercel; dois crons diários separados ficam como possibilidade a validar.
+- Incluídas sugestões de veículos e explicação prática da validação de fontes (P0), ainda não executada.
+
+### Adicionado
+
+- Branch `develop` criada a partir de `main` para os desenvolvimentos do projeto.
+- Fluxo documentado de branches de tarefa para `develop`, seguido de pull request de `develop` para `main` após validação.
 - Changelog com histórico inicial e convenções para acompanhar as próximas implementações.
 - Link para este histórico no README e orientação de atualização para agentes.
 

@@ -1,0 +1,7 @@
+.p0-local/
+p0-results/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example

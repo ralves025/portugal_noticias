@@ -1,6 +1,6 @@
 # Notícias PT — projeto inicial
 
-Status: planejamento; aplicação ainda não implementada. Data: 05/09/2026.
+Status: P0 em execução; aplicação ainda não implementada. Atualizado em 06/09/2026.
 
 Mini hub pessoal para acompanhar Portugal diariamente, pensado para Rafael, cidadão brasileiro e português. A proposta permite consultar notícias em poucos minutos e abrir as matérias nos veículos de origem.
 
@@ -12,7 +12,7 @@ Este é o destino de versionamento da documentação e da futura aplicação. A 
 
 Descrição original do repositório: “webapp para reunir uma seleção curada diária de notícias de Portugal”. No MVP, a seleção será feita por fontes e filtros, sem curadoria editorial manual diária prevista.
 
-Fluxo recomendado para trabalhos futuros: verificar o estado remoto, trabalhar em uma branch por tarefa e integrar por pull request para main. Preservar o histórico e as alterações locais ao sincronizar.
+Fluxo definido para o projeto: desenvolver em `develop` antes de integrar à branch principal `main`. Para tarefas isoladas, criar branches a partir de `develop` e abrir pull requests para `develop`. Após validar o conjunto de alterações, abrir um pull request de `develop` para `main`. Preservar o histórico e as alterações locais ao sincronizar.
 
 ## Documentos e ordem de leitura
 
@@ -30,7 +30,7 @@ Fluxo recomendado para trabalhos futuros: verificar o estado remoto, trabalhar e
 
 - Webapp responsivo, sem login no MVP, com notícias organizadas por data, tema e veículo.
 - Next.js + React + TypeScript; PostgreSQL no Supabase; coleta RSS no servidor.
-- Uma coleta diária inicial; horário e frequência maiores poderão ser revistos.
+- Uma atualização diária no MVP, com horário-alvo de 9h de Portugal continental (Europe/Lisbon); considerar a janela de execução do scheduler.
 - Favoritos e preferências locais, sem sincronização entre dispositivos.
 - Sem reprodução de matérias completas, resumos gerados por IA ou coleta por scraping no MVP.
 
@@ -38,4 +38,4 @@ As escolhas são recomendações de projeto, não preferências já confirmadas 
 
 ## Próxima ação recomendada
 
-Executar o pacote P0 de validação de fontes descrito no plano de execução. Em seguida, criar a base da aplicação com dados fictícios claramente identificados. A primeira versão utilizável pode operar com uma fonte validada; a meta de diversidade é pelo menos três veículos independentes.
+Acompanhar a [execução da P0 e seus resultados](docs/p0/README.md). Em seguida, criar a base da aplicação com dados fictícios claramente identificados. A primeira versão utilizável pode operar com uma fonte validada; a meta de diversidade é pelo menos três veículos independentes.

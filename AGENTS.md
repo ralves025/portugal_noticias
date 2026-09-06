@@ -2,7 +2,7 @@
 
 ## Contexto e escopo
 
-Este repositório contém o planejamento de um mini hub pessoal de notícias de Portugal. Leia README.md e os documentos em docs/ antes de trabalhar. O pedido original autoriza apenas a documentação inicial; a implementação depende de uma tarefa posterior do usuário.
+Este repositório contém o planejamento de um mini hub pessoal de notícias de Portugal. Leia README.md e os documentos em docs/ antes de trabalhar. O usuário autorizou executar a P0, incluindo scripts de diagnóstico, testes e observação temporária no GitHub Actions. A implementação do webapp continua fora desta tarefa.
 
 ## Convenções para trabalhos futuros
 
@@ -26,5 +26,5 @@ Os pacotes do plano podem ser atribuídos a agentes em tarefas futuras. A divis�
 - Repositório definido pelo usuário: https://github.com/ralves025/portugal_noticias.
 - Antes de configurar Git ou sincronizar, inspecione o estado local e remoto e confirme a branch principal existente; não presuma main ou master.
 - Se já existir um remoto origin diferente, investigue antes de substituí-lo. Preserve arquivos locais e conteúdo remoto durante a integração inicial.
-- Fluxo recomendado: uma branch por tarefa e pull request para a branch principal, com resumo e validações executadas.
+- Fluxo definido pelo usuário: `develop` é a branch de desenvolvimento; `main` é a branch principal. Fazer os desenvolvimentos em `develop` ou em branches de tarefa criadas a partir dela, integradas por pull request para `develop`. Após as validações, promover `develop` para `main` por pull request, com resumo e verificações executadas. Não enviar desenvolvimentos diretamente para `main`.
 - Não use force push nem descarte histórico ou alterações para resolver divergências. A indicação do repositório na documentação não significa que os arquivos já foram enviados.
