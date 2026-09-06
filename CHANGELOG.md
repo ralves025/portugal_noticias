@@ -15,6 +15,9 @@ Histórico das alterações relevantes do Notícias PT, em ordem da mais recente
 
 ### Adicionado
 
+- Especificação de montagem dos ambientes local, CI, previews, homologação e produção; matriz de configuração, segredos, migrações, verificações, entrega por SHA e recuperação.
+- Modelo de registro de entrega e referências nos documentos de arquitetura, stack e execução. Nenhum ambiente do webapp provisionado nesta alteração.
+
 - Primeira coleta na nuvem executada com sucesso em 06/09/2026; artifact verificado e métricas preservadas. Relatório automático ampliado com avaliação por feed.
 - P0: probe de feeds oficiais, nove testes automatizados, relatório técnico local e workflow de observação limitada a 6–8/09/2026 no GitHub Actions, com artifacts por sete dias e encerramento automático.
 - Descoberta oficial de RSS de A Bola e Observador; registro de HTTP 403 do Público e das pendências de uso público. A observação temporal permanece em andamento.

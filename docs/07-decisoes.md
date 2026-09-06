@@ -14,6 +14,9 @@ Data-base: 05/09/2026. As decisões abaixo orientam a implementação posterior.
 | D06 | Uma coleta diária no MVP, horário-alvo 9h em Europe/Lisbon | Decisão do usuário para simplificar a primeira versão | Validar cobertura no P0 e operação do scheduler |
 | D07 | Sem IA no MVP | A utilidade inicial não depende de geração de texto | Usuário solicitar resumo com rastreabilidade |
 | D08 | Retenção de 30 dias | Limita armazenamento e mantém busca recente | Favoritos ou histórico exigirem outro prazo |
+| D09 | Proposta: fixtures em previews de tarefa e bancos separados para homologação/produção | Isolar testes e dados | Conferir cotas antes da montagem |
+| D10 | Proposta: Actions coordena entrega manual por SHA; sem deploy Git concorrente | Aplicar migrações antes da versão correspondente do app | Implementar P1/P6 e validar CLIs |
+| D11 | Proposta: um projeto Vercel, Preview para homologação e Production para uso diário | Reduzir recursos iniciais | Plano, isolamento ou custos exigirem outra topologia |
 
 ## Pendências sem bloqueio da documentação
 
@@ -27,6 +30,8 @@ Data-base: 05/09/2026. As decisões abaixo orientam a implementação posterior.
 | Acesso público ou privado | Leitura sem login proposta; não incluir dados pessoais | Antes de hospedar |
 | Sincronização entre dispositivos | Fora do MVP | Após avaliar o piloto |
 | Nome e domínio | Notícias PT provisório; domínio próprio opcional | Publicação |
+
+Procedimentos e inventário de recursos ainda não provisionados: [Ambientes e entregas](08-ambientes-e-entregas.md). Limite de gasto, acesso à homologação, regiões e responsáveis operacionais devem ser preenchidos na montagem.
 
 ## Riscos e respostas
 

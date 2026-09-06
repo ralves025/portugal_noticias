@@ -47,10 +47,12 @@ Funcionalidades F01–F07 atendidas; pelo menos uma fonte operacional identifica
 
 ## Checklist operacional futuro
 
+Seguir a sequência detalhada em [Ambientes e entregas](08-ambientes-e-entregas.md). Criar um [registro de entrega](modelos/registro-entrega.md) para cada publicação em homologação/produção. A documentação desses procedimentos não significa que P1–P6 foram executados.
+
 1. Definir acesso público ou restrito e confirmar condições/cotas dos serviços escolhidos.
 2. Criar ambiente, aplicar migrações, cadastrar apenas fontes validadas e configurar segredos.
 3. Executar primeira ingestão protegida e verificar artigos e logs.
-4. Publicar preview e validar fluxos; promover ao ambiente de uso quando a tarefa de publicação estiver autorizada.
+4. Validar homologação e integrar develop → PR → main. Quando a entrega estiver autorizada, executar o pipeline do ambiente: checks do SHA, build com configuração própria, migrações compatíveis, deploy e testes de fumaça. Não promover um build de Preview com credenciais de homologação para produção.
 5. Configurar uma coleta diária com horário-alvo de 9h em Europe/Lisbon; validar a janela de execução, a conversão para UTC e o procedimento de ajuste sazonal antes de publicar. Conferir uma execução automática na manhã seguinte.
 6. Documentar exportação/restauração do banco disponível no plano, retenção e procedimento para desativar uma fonte.
 7. Para rollback, restaurar a versão anterior da aplicação compatível com o schema; não presumir reversão automática de migrações nem cron.

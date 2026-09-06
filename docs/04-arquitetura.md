@@ -1,6 +1,6 @@
 # Arquitetura e contratos
 
-Proposta técnica, ainda não implementada.
+Proposta técnica do webapp, ainda não implementada. O isolamento de configuração e a ordem entre migrações e deploy seguem [Ambientes e entregas](08-ambientes-e-entregas.md). Os scripts de diagnóstico P0 não são o backend da aplicação.
 
 ## Fluxo
 

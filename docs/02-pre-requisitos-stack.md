@@ -34,10 +34,15 @@ Referências primárias: [rss-parser](https://github.com/rbren/rss-parser), [Sup
 
 ## Configuração prevista
 
+A matriz completa de ambientes, modos e segredos está em [Ambientes e entregas](08-ambientes-e-entregas.md). A montagem prevê fixtures locais, homologação e produção com bancos distintos e deploy coordenado pelo Actions. Os novos workflows do app ainda não existem.
+
 O agente de implementação deverá criar .env.example apenas com placeholders:
 
 | Variável | Local | Uso |
 | --- | --- | --- |
+| APP_ENV | Servidor | local / preview / homologacao / producao |
+| DATA_MODE | Servidor | fixtures / database; produção exige database |
+| INGESTION_ENABLED | Servidor | false por padrão; habilitar apenas quando ambiente e fontes estiverem aptos |
 | SUPABASE_URL | Servidor | Endereço do projeto |
 | SUPABASE_SERVICE_ROLE_KEY | Segredo no servidor | Ingestão e consultas internas; nunca enviar ao cliente |
 | CRON_SECRET | Segredo no servidor | Autorizar a chamada agendada |
@@ -53,6 +58,6 @@ A Vercel Hobby admite cron diário, mas pode iniciar a execução em qualquer mo
 
 O scheduler usa UTC, não Europe/Lisbon. Para manter o horário local, a proposta inicial é um único cron com ajuste sazonal da configuração: 09:00 UTC no horário padrão e 08:00 UTC no horário de verão de Lisboa. Antes do deploy, registrar o responsável e o procedimento de atualização/redeploy nas transições, verificar a regra vigente do fuso e testar as conversões. Uma expressão UTC fixa o ano todo deslocaria a coleta local em uma hora; não considerar que a Vercel fará essa conversão automaticamente. Referência: [Cron Jobs](https://vercel.com/docs/cron-jobs).
 
-Essa opção reduz a configuração inicial, mas exige manutenção sazonal. Se for necessário ajuste automático de fuso ou pontualidade maior, reavaliar o scheduler. Nenhum cron foi configurado nesta etapa.
+Essa opção reduz a configuração inicial, mas exige manutenção sazonal. Se for necessário ajuste automático de fuso ou pontualidade maior, reavaliar o scheduler. Nenhum cron do webapp foi configurado; o workflow temporário de diagnóstico P0 é independente.
 
 Objetivo de custo: começar dentro das franquias disponíveis, sem compromisso de custo zero. Conferir preços, quotas, pausa por inatividade, retenção e limites de execução na contratação. Custos potenciais: hospedagem, banco, domínio opcional e tráfego. Nenhuma assinatura paga está autorizada ou provisionada neste planejamento.

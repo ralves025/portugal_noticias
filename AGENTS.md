@@ -7,6 +7,7 @@ Este repositório contém o planejamento de um mini hub pessoal de notícias de 
 ## Convenções para trabalhos futuros
 
 - Atualize CHANGELOG.md na mesma alteração que modificar o projeto, seguindo suas convenções. Registre somente trabalho realizado em Não lançado; mantenha planos futuros nos documentos de escopo e execução.
+- Para montar ambientes ou entregar o app, siga docs/08-ambientes-e-entregas.md e use docs/modelos/registro-entrega.md. Distinga procedimentos planejados de recursos realmente provisionados.
 - Preserve a simplicidade do MVP e registre mudanças de escopo em docs/07-decisoes.md.
 - Use português na documentação e interface; preserve a redação original dos títulos.
 - Não considere uma fonte ativa sem validar o endpoint e registrar condições de uso e campos permitidos.

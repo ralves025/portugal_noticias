@@ -23,8 +23,11 @@ Fluxo definido para o projeto: desenvolver em `develop` antes de integrar à bra
 5. [Experiência de uso](docs/05-experiencia.md): telas, estados e regras de apresentação.
 6. [Plano de execução](docs/06-execucao.md): pacotes de trabalho e critérios de aceite.
 7. [Decisões e pendências](docs/07-decisoes.md): premissas, riscos e próximos passos.
-8. [Orientações para agentes](AGENTS.md): como continuar este projeto.
-9. [Histórico de alterações](CHANGELOG.md): entregas realizadas e mudanças ainda não lançadas.
+8. [Ambientes e entregas](docs/08-ambientes-e-entregas.md): montagem local, homologação, produção, configuração e fluxo de publicação.
+9. [Orientações para agentes](AGENTS.md): como continuar este projeto.
+10. [Histórico de alterações](CHANGELOG.md): entregas realizadas e mudanças ainda não lançadas.
+
+Modelo operacional: [registro de entrega](docs/modelos/registro-entrega.md).
 
 ## Proposta resumida
 
@@ -34,7 +37,7 @@ Fluxo definido para o projeto: desenvolver em `develop` antes de integrar à bra
 - Favoritos e preferências locais, sem sincronização entre dispositivos.
 - Sem reprodução de matérias completas, resumos gerados por IA ou coleta por scraping no MVP.
 
-As escolhas são recomendações de projeto, não preferências já confirmadas pelo usuário. Não foram instaladas dependências, criadas contas, implementados componentes ou publicados serviços. A pesquisa documental não equivale a teste operacional dos feeds.
+Temas, horário-alvo e fluxo Git foram definidos pelo usuário; a infraestrutura do webapp continua uma proposta. Scripts e workflow de diagnóstico da P0 já foram executados. Ambientes, banco e aplicação do hub ainda não foram montados; consultar o relatório P0 para resultados e limitações.
 
 ## Próxima ação recomendada
 
