@@ -2,14 +2,14 @@
 
 ## Objetivo
 
-Facilitar um hábito de leitura de 5 a 10 minutos sobre Portugal. Priorizar acontecimentos nacionais, política, economia e sociedade, com acesso a cultura e desporto. A dupla cidadania inspira uma evolução futura sobre serviços e vida em Portugal, sem transformar o MVP em consultoria de cidadania.
+Facilitar um hábito de leitura de 5 a 10 minutos sobre Portugal. Prioridades confirmadas pelo usuário: temas gerais nacionais portugueses, política portuguesa, desporto português e cultura. Economia e sociedade entram como parte da atualidade nacional. A dupla cidadania inspira uma evolução futura sobre serviços e vida em Portugal, sem transformar o MVP em consultoria de cidadania.
 
 ## Premissas de planejamento
 
 - Uso pessoal, principalmente em celular, também em computador.
 - Interface em português de Portugal; linguagem simples e títulos originais.
 - Leitura pública sem conta; preferências armazenadas apenas no navegador.
-- Baixo custo e uma atualização por dia são aceitáveis como ponto de partida, sujeitos a revisão.
+- Preferência confirmada: duas atualizações diárias, por volta das 9h e 14h, se viáveis. Confirmar fuso de referência e tolerância de atraso antes de configurar. Baixo custo continua como proposta, sem orçamento confirmado.
 - O hub agrega referências; a leitura integral ocorre no site do veículo.
 
 ## Funcionalidades do MVP

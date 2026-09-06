@@ -47,8 +47,12 @@ Não é necessário fornecer credenciais para o protótipo com fixtures. Separar
 
 ## Hospedagem, frequência e custos
 
-A referência inicial é Vercel com coleta diária e Supabase para dados. O plano Hobby da Vercel permite cron uma vez ao dia e execução dentro da hora configurada, sem precisão de minuto. Por isso não planejar atualização a cada 15 minutos nessa modalidade. Fonte: [limites de cron da Vercel](https://vercel.com/docs/cron-jobs/usage-and-pricing), consultada em 05/09/2026.
+A preferência do usuário é receber duas atualizações por dia, por volta das 9h e 14h. Ainda é necessário confirmar se são horários de Brasília ou de Portugal continental e qual atraso é aceitável.
 
-O cron usa UTC. Escolher uma hora UTC fixa e mostrar a hora real da coleta; o horário em Lisboa varia com horário de verão. Atualização horária exigirá rever plano ou scheduler antes da implementação dessa melhoria.
+Correção da interpretação inicial: o plano Hobby da Vercel limita cada cron a uma execução diária, mas permite vários crons por projeto. A proposta a validar é usar dois agendamentos diários separados, compartilhando a mesma lógica de ingestão; não uma única expressão que rode duas vezes no dia. Isso não foi configurado nem testado. A documentação informa que uma execução marcada para uma hora pode ocorrer até o fim daquela hora, portanto não garante atualização pronta exatamente às 9h ou 14h. Fonte: [limites de cron da Vercel](https://vercel.com/docs/cron-jobs/usage-and-pricing), consultada em 05/09/2026.
+
+Se a tolerância exigir maior precisão, avaliar outro scheduler ou plano compatível antes de contratar. A hospedagem da aplicação e o serviço que dispara a coleta podem ser escolhidos separadamente.
+
+O cron da Vercel usa UTC. Converter os horários somente depois da confirmação do fuso. Se a referência for Europe/Lisbon, considerar as mudanças sazonais de horário; não fixar um offset anual. A interface continuará informando a hora real de atualização.
 
 Objetivo de custo: começar dentro das franquias disponíveis, sem compromisso de custo zero. Conferir preços, quotas, pausa por inatividade, retenção e limites de execução na contratação. Custos potenciais: hospedagem, banco, domínio opcional e tráfego. Nenhuma assinatura paga está autorizada ou provisionada neste planejamento.

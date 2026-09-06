@@ -30,7 +30,7 @@ Fluxo definido para o projeto: desenvolver em `develop` antes de integrar à bra
 
 - Webapp responsivo, sem login no MVP, com notícias organizadas por data, tema e veículo.
 - Next.js + React + TypeScript; PostgreSQL no Supabase; coleta RSS no servidor.
-- Uma coleta diária inicial; horário e frequência maiores poderão ser revistos.
+- Duas atualizações diárias desejadas, por volta das 9h e 14h; fuso e tolerância de atraso ainda a confirmar.
 - Favoritos e preferências locais, sem sincronização entre dispositivos.
 - Sem reprodução de matérias completas, resumos gerados por IA ou coleta por scraping no MVP.
 

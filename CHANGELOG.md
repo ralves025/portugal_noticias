@@ -13,6 +13,12 @@ Histórico das alterações relevantes do Notícias PT, em ordem da mais recente
 
 ## Não lançado
 
+### Alterado
+
+- Preferências registradas: atualidade nacional portuguesa, política, desporto e cultura; duas atualizações desejadas, às 9h e 14h, com fuso e tolerância pendentes.
+- Corrigida a interpretação dos limites de agendamento da Vercel; dois crons diários separados ficam como possibilidade a validar.
+- Incluídas sugestões de veículos e explicação prática da validação de fontes (P0), ainda não executada.
+
 ### Adicionado
 
 - Branch `develop` criada a partir de `main` para os desenvolvimentos do projeto.
