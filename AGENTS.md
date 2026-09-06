@@ -2,7 +2,7 @@
 
 ## Contexto e escopo
 
-Este repositório contém o planejamento de um mini hub pessoal de notícias de Portugal. Leia README.md e os documentos em docs/ antes de trabalhar. O pedido original autoriza apenas a documentação inicial; a implementação depende de uma tarefa posterior do usuário.
+Este repositório contém o planejamento de um mini hub pessoal de notícias de Portugal. Leia README.md e os documentos em docs/ antes de trabalhar. O usuário autorizou executar a P0, incluindo scripts de diagnóstico, testes e observação temporária no GitHub Actions. A implementação do webapp continua fora desta tarefa.
 
 ## Convenções para trabalhos futuros
 

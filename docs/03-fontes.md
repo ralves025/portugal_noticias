@@ -6,9 +6,9 @@ Pesquisa documental realizada em 05/09/2026. Disponibilidade de RSS não equival
 
 | Veículo | Evidência / ponto de partida | Estado |
 | --- | --- | --- |
-| RTP Notícias | [Página oficial RSS](https://www.rtp.pt/noticias/rss/feeds), que informa o endpoint https://www.rtp.pt/noticias/rss | RSS documentado; XML e condições de uso ainda precisam ser testados/revisados |
-| Público | [Site oficial](https://www.publico.pt/) | Candidato; endpoint atual e condições não confirmados |
-| Observador | [Site oficial](https://observador.pt/); tentativa de abrir https://observador.pt/feed/ retornou erro na ferramenta de pesquisa | Candidato; erro não comprova ausência de feed |
+| RTP Notícias | [Página oficial RSS](https://www.rtp.pt/noticias/rss/feeds), que informa o endpoint https://www.rtp.pt/noticias/rss | Três feeds testados localmente em 06/09; observação temporal e aprovação pública pendentes (ver relatório P0) |
+| Público | [Site oficial](https://www.publico.pt/) | Página de descoberta retornou HTTP 403 localmente em 06/09; endpoint atual e condições pendentes |
+| Observador | [Site oficial](https://observador.pt/); tentativa de abrir https://observador.pt/feed/ retornou erro na ferramenta de pesquisa | Feed confirmado no HTML oficial e testado localmente em 06/09; janela observada de 9,74h; uso público pendente |
 | Renascença | [Site oficial](https://rr.sapo.pt/) | Candidato para ampliar diversidade; integração não verificada |
 | SIC Notícias | [Site oficial](https://sicnoticias.pt/) | Candidato; integração não verificada |
 
@@ -78,4 +78,4 @@ O resultado será uma tabela por veículo, com temas cobertos, situação técni
 
 Proposta de verificação temporal: amostras distribuídas por 24–48 horas, registradas quando efetivamente realizadas; esse período é uma janela de observação, não uma promessa de disponibilidade. Validar especialmente o intervalo entre duas manhãs consecutivas, pois a decisão do MVP é uma coleta diária às 9h de Portugal continental. Verificar se os feeds conservam cobertura suficiente durante esse intervalo, inclusive fins de semana. A hipótese de que a manhã oferece um panorama útil deve ser avaliada por fonte; não pressupor um horário comum de publicação. Não ativar automações de observação apenas por esta descrição do plano.
 
-O usuário não precisa programar, fornecer senhas de jornais ou escolher todos os veículos previamente. Um agente executa a investigação em tarefa própria e apresenta os resultados para decidir quais fontes entram. A P0 ainda não foi executada; a pesquisa de páginas editoriais não substitui o teste dos feeds.
+O usuário não precisa programar, fornecer senhas de jornais ou escolher todos os veículos previamente. Um agente executa a investigação em tarefa própria e apresenta os resultados para decidir quais fontes entram. A primeira amostra local da P0 foi executada em 06/09/2026. Consulte [resultados e observação na nuvem](p0/README.md); a etapa temporal e a aprovação de uso público continuam pendentes.

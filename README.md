@@ -1,6 +1,6 @@
 # Notícias PT — projeto inicial
 
-Status: planejamento; aplicação ainda não implementada. Data: 05/09/2026.
+Status: P0 em execução; aplicação ainda não implementada. Atualizado em 06/09/2026.
 
 Mini hub pessoal para acompanhar Portugal diariamente, pensado para Rafael, cidadão brasileiro e português. A proposta permite consultar notícias em poucos minutos e abrir as matérias nos veículos de origem.
 
@@ -38,4 +38,4 @@ As escolhas são recomendações de projeto, não preferências já confirmadas 
 
 ## Próxima ação recomendada
 
-Executar o pacote P0 de validação de fontes descrito no plano de execução. Em seguida, criar a base da aplicação com dados fictícios claramente identificados. A primeira versão utilizável pode operar com uma fonte validada; a meta de diversidade é pelo menos três veículos independentes.
+Acompanhar a [execução da P0 e seus resultados](docs/p0/README.md). Em seguida, criar a base da aplicação com dados fictícios claramente identificados. A primeira versão utilizável pode operar com uma fonte validada; a meta de diversidade é pelo menos três veículos independentes.

@@ -13,6 +13,11 @@ Histórico das alterações relevantes do Notícias PT, em ordem da mais recente
 
 ## Não lançado
 
+### Adicionado
+
+- P0: probe de feeds oficiais, nove testes automatizados, relatório técnico local e workflow de observação limitada a 6–8/09/2026 no GitHub Actions, com artifacts por sete dias e encerramento automático.
+- Descoberta oficial de RSS de A Bola e Observador; registro de HTTP 403 do Público e das pendências de uso público. A observação temporal permanece em andamento.
+
 ### Alterado
 
 - Em 2026-09-06, frequência do MVP simplificada para uma coleta diária, com horário-alvo de 9h em Europe/Lisbon; substitui a preferência anterior por duas coletas. Documentadas janela de execução e necessidade de ajuste sazonal do cron UTC.

@@ -46,4 +46,4 @@ Maior frequência; seleção de fontes favoritas; fontes regionais; exportar/imp
 
 ## Estado desta entrega
 
-Documentação criada. Nenhum código da aplicação, teste operacional de RSS, banco, conta, agendamento ou deploy foi executado. Pesquisa confirmou a documentação RSS da RTP e restrições do scheduler proposto; os demais veículos continuam candidatos. A próxima tarefa recomendada é P0, seguida da fundação com fixtures.
+P0 em execução: scripts e testes de diagnóstico criados; primeira amostra local realizada em 06/09/2026. Integração e observação no Actions em validação. Ver [relatório P0](p0/README.md). Aplicação, banco e deploy do webapp não implementados. Aprovação pública das fontes e comparação das manhãs continuam pendentes.
