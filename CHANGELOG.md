@@ -15,6 +15,8 @@ Histórico das alterações relevantes do Notícias PT, em ordem da mais recente
 
 ### Adicionado
 
+- Branch `develop` criada a partir de `main` para os desenvolvimentos do projeto.
+- Fluxo documentado de branches de tarefa para `develop`, seguido de pull request de `develop` para `main` após validação.
 - Changelog com histórico inicial e convenções para acompanhar as próximas implementações.
 - Link para este histórico no README e orientação de atualização para agentes.
 

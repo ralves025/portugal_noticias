@@ -12,7 +12,7 @@ Este é o destino de versionamento da documentação e da futura aplicação. A 
 
 Descrição original do repositório: “webapp para reunir uma seleção curada diária de notícias de Portugal”. No MVP, a seleção será feita por fontes e filtros, sem curadoria editorial manual diária prevista.
 
-Fluxo recomendado para trabalhos futuros: verificar o estado remoto, trabalhar em uma branch por tarefa e integrar por pull request para main. Preservar o histórico e as alterações locais ao sincronizar.
+Fluxo definido para o projeto: desenvolver em `develop` antes de integrar à branch principal `main`. Para tarefas isoladas, criar branches a partir de `develop` e abrir pull requests para `develop`. Após validar o conjunto de alterações, abrir um pull request de `develop` para `main`. Preservar o histórico e as alterações locais ao sincronizar.
 
 ## Documentos e ordem de leitura
 
